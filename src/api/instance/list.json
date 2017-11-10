@@ -11,9 +11,45 @@
         "InnerIpAddress": {
           "IpAddress": ["10.170.106.80"]
         },
-        "InstanceChargeType": "PostPaid",
+        "InstanceChargeType": "PrePaid",
         "InstanceId": "i-94t3s0jxk",
         "InstanceName": "dd\u6027\u80fd\u6d4b\u8bd5",
+        "InstanceNetworkType": "classic",
+        "InstanceType": "ecs.s2.large",
+        "InternetChargeType": "PayByTraffic",
+        "InternetMaxBandwidthIn": -1,
+        "InternetMaxBandwidthOut": 1,
+        "IoOptimized": false,
+        "OperationLocks": {
+          "LockReason": []
+        },
+        "PublicIpAddress": {},
+        "RegionId": "cn-shenzhen",
+        "SecurityGroupIds": {
+          "SecurityGroupId": ["sg-94kd0cyg0"]
+        },
+        "SerialNumber": "51d1353b-22bf-4567-a176-8b3e12e43135",
+        "Status": "Running",
+        "VpcAttributes": {
+          "PrivateIpAddress": {
+            "IpAddress": []
+          }
+        },
+        "ZoneId": "cn-shenzhen-a"
+      },
+      {
+        "CreationTime": "2015-07-27T07:08Z",
+        "DeviceAvailable": true,
+        "EipAddress": {},
+        "ExpiredTime": "2011-09-08T16:00Z",
+        "HostName": "alexdev",
+        "ImageId": "centos6u5_64_20G_aliaegis_20150130.vhd",
+        "InnerIpAddress": {
+          "IpAddress": ["10.170.106.80"]
+        },
+        "InstanceChargeType": "PostPaid",
+        "InstanceId": "i-xxxvvvmm",
+        "InstanceName": "gitlab",
         "InstanceNetworkType": "classic",
         "InstanceType": "ecs.s2.large",
         "InternetChargeType": "PayByTraffic",
@@ -31,7 +67,7 @@
           "SecurityGroupId": ["sg-94kd0cyg0"]
         },
         "SerialNumber": "51d1353b-22bf-4567-a176-8b3e12e43135",
-        "Status": "Running",
+        "Status": "Stopped",
         "VpcAttributes": {
           "PrivateIpAddress": {
             "IpAddress": []

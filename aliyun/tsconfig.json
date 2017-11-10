@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "strictNullChecks": false,
+    "outDir": ".tmp",
+    "typeRoots": ["./types", "./node_modules/@types"]
+  },
+  "exclude": ["node_modules", "bower_components"],
+  "compileOnSave": false,
+  "buildOnSave": false
+}
