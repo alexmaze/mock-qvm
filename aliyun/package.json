@@ -9,9 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/crypto-js": "^3.1.37",
+    "@types/axios": "^0.14.0",
     "@types/node": "^8.0.50",
-    "crypto-js": "^3.1.9-1",
+    "axios": "^0.17.0",
     "kitx": "^1.3.0"
   }
 }
