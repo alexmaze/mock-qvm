@@ -22,7 +22,7 @@
           </el-form-item>
 
           <el-form-item label="参数列表" v-model="form.params" placeholder="value">
-            <div style="width: 600px;" v-for="(param, index) in form.params" :key="index">
+            <div style="width: 600px; position: relative;" v-for="(param, index) in form.params" :key="index">
               <el-input :disabled="index == 0" v-model="form.params[index].key" style="width: 200px;" placeholder="key"></el-input>
               :
               <el-input :disabled="index == 0" v-model="form.params[index].value" style="width: 388px;" placeholder="value"></el-input>
@@ -52,63 +52,13 @@
 
 <script>
 import { client } from "./client"
+import { API_PARAMS, APIS } from "./config"
 
 export default {
   name: "app",
   data() {
     return {
-      apis: [
-        {
-          group: "合作伙伴帐号相关接口 -- 帐号管理",
-          value: [
-            { key: "CreateAliyunAccount", value: "合作伙伴创建阿里云帐号" },
-            { key: "GetBasicInfoForAccount", value: "合作伙伴依据阿里云Id获取阿里云帐号基本信息" },
-            { key: "UpdatePasswordForAccount", value: "合作伙伴更新阿里云帐号密码(需要申请权限)" },
-            { key: "UpdateStatusForAccount", value: "合作伙伴更新阿里云帐号状态" },
-            { key: "ListAliyunAccount", value: "合作伙伴列出阿里云帐号" }
-          ]
-        },
-        {
-          group: "合作伙伴帐号相关接口 -- AK管理",
-          value: [
-            { key: "CreateAccessKeyForAccount", value: "合作伙伴为阿里云帐号创建AK" },
-            { key: "DeleteAccessKeyForAccount", value: "合作伙伴为阿里云帐号删除AK" },
-            { key: "ListAccessKeysForAccount", value: "合作伙伴查询阿里云帐号AK列表" },
-            {
-              key: "GetShortTermAccessKeyForAccount",
-              value: "合作伙伴为阿里云帐号创建临时AK"
-            }
-          ]
-        },
-        {
-          group: "普通阿里云帐号相关接口 -- 帐号管理",
-          value: [
-            { key: "GetBasicInfo", value: "阿里云帐号查询自身帐号的基本信息" },
-            { key: "GetAccountSummary", value: "阿里云帐号查询概要信息" }
-          ]
-        },
-        {
-          group: "普通阿里云帐号相关接口 -- MFA设备管理",
-          value: [
-            { key: "CreateVMFADevice", value: "阿里云帐号为主帐号创建VMFA设备" },
-            { key: "DeleteVMFADevice", value: "阿里云帐号为主帐号删除VMFA设备" },
-            { key: "ListMFADevice", value: "阿里云帐号查询主帐号MFA设备列表" },
-            { key: "EnableMFADevice", value: "阿里云帐号为主帐号绑定MFA设备" },
-            { key: "DeactivateMFADevice", value: "阿里云帐号为主帐号解绑MFA设备" },
-            { key: "CheckMFADeviceCode", value: "阿里云帐号校验主帐号MFA验证码" }
-          ]
-        },
-        {
-          group: "普通阿里云帐号相关接口 -- AK管理",
-          value: [
-            { key: "CreateAccessKey", value: "阿里云帐号为自身创建AK" },
-            { key: "DeleteAccessKey", value: "阿里云帐号为自身删除AK" },
-            { key: "ListAccessKeys", value: "阿里云帐号查询自身AK列表" },
-            { key: "UpdateAccessKeyStatus", value: "阿里云帐号更新自身指定AK状态" },
-            { key: "GetAccessKeyLastUsed", value: "阿里云查询AK最后使用信息" }
-          ]
-        }
-      ],
+      apis: APIS,
       form: {
         ak: "",
         sk: "",
@@ -133,7 +83,21 @@ export default {
       this.form.params.splice(index, 1)
     },
     onApiChange(value) {
-      this.form.params[0].value = value
+      const ps = API_PARAMS[value]
+      this.form.params = [
+        {
+          key: "Action",
+          value: value
+        }
+      ]
+      if (ps && ps.forEach) {
+        ps.forEach(p => {
+          this.form.params.push({
+            key: p,
+            value: null
+          })
+        })
+      }
     },
     onSubmit() {
       const params = {}
@@ -207,6 +171,7 @@ export default {
   vertical-align: top;
   position: absolute;
   left: -25px;
+  top: 0;
 }
 pre {
   font-size: 14px;
