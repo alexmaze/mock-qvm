@@ -6,6 +6,13 @@
       </div>
       <div>
         <el-form ref="form" :model="form" label-width="100px" label-position="left">
+          <el-form-item label="Aliyun AK">
+            <el-input v-model="form.ak" placeholder="必填" style="width: 600px;"></el-input>
+          </el-form-item>
+          <el-form-item label="Aliyun SK">
+            <el-input v-model="form.sk" placeholder="必填" style="width: 600px;"></el-input>
+          </el-form-item>
+
           <el-form-item label="接口">
             <el-select @change="onApiChange" v-model="form.api" style="width: 600px;" placeholder="请选择要调用的API">
               <el-option-group v-for="group in apis" :label="group.group" :key="group.group">
@@ -32,7 +39,7 @@
       </div>
     </el-card>
 
-    <el-card>
+    <el-card v-show="result != null">
       <div slot="header" class="clearfix">
         <span>返回结果</span>
       </div>
@@ -44,6 +51,8 @@
 </template>
 
 <script>
+import { client } from "./client"
+
 export default {
   name: "app",
   data() {
@@ -101,6 +110,8 @@ export default {
         }
       ],
       form: {
+        ak: "",
+        sk: "",
         params: [
           {
             key: "Action",
@@ -108,8 +119,7 @@ export default {
           }
         ]
       },
-      a: false,
-      result: { a: 3 }
+      result: null
     }
   },
   methods: {
@@ -126,7 +136,30 @@ export default {
       this.form.params[0].value = value
     },
     onSubmit() {
-      console.log(this.form)
+      const params = {}
+      this.form.params.forEach(i => {
+        params[i.key] = i.value
+      })
+
+      if (!this.form.ak || !this.form.sk) {
+        this.$message.error("AccessKeyId / AccessKeySecret 不能为空!")
+        return
+      }
+
+      client.get(this.form.ak, this.form.sk, params).then(
+        res => {
+          this.result = res.data
+        },
+        err => {
+          const e = err.response
+          if (e.data && e.data.Code) {
+            this.$message.error(`${e.data.Code}: ${e.data.Message}`)
+          } else {
+            this.$message.error(`${e.status} - ${e.statusText}`)
+          }
+          this.result = e
+        }
+      )
     },
     syntaxHighlight(obj) {
       let json = JSON.stringify(obj, null, 2)
