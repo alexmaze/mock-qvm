@@ -16,7 +16,10 @@ app.use(async (ctx, next) => {
 })
 
 // regist routes
-router.prefix("/api").use("/instance", require("./api/instance").routes())
+router
+  .prefix("/api")
+  .use("/instance", require("./api/instance").routes())
+  .use("/region", require("./api/region").routes())
 
 app.use(router.routes()).listen(3000)
 console.log("server running @:3000")
