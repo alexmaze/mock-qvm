@@ -1,6 +1,8 @@
 const Koa = require("koa")
 const Router = require("koa-router")
 const cors = require("@koa/cors")
+const fs = require("fs")
+const path = require("path")
 
 const app = new Koa()
 const router = new Router()
@@ -16,10 +18,11 @@ app.use(async (ctx, next) => {
 })
 
 // regist routes
-router
-  .prefix("/api")
-  .use("/instance", require("./api/instance").routes())
-  .use("/region", require("./api/region").routes())
+const files = fs.readdirSync(path.join(__dirname, "./api"))
+router.prefix("/api")
+files.forEach(file => {
+  router.use(`/${file}`, require(`./api/${file}`).routes())
+})
 
 app.use(router.routes()).listen(3000)
 console.log("server running @:3000")
