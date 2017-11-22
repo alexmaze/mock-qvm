@@ -34,6 +34,7 @@
           "ip_address": []
         }
       },
+      "key_pair_name": "keypair_1",
       "zone_id": "cn-shenzhen-a"
     },
     {
@@ -77,5 +78,5 @@
   ],
   "page": 1,
   "size": 10,
-  "total": 1
+  "total": 12
 }

@@ -1,18 +1,3 @@
-exports.list = {
-  page: 1,
-  total: 2,
-  data: [
-    {
-      key_pair_finger_print: "a562406dd52532a45bf469fd45117500",
-      key_pair_name: "keypair_1"
-    },
-    {
-      key_pair_finger_print: "2814fd6c0d43673de5f6ee74eff938d9",
-      key_pair_name: "keypair_2"
-    }
-  ],
-  size: 10
-}
 const privateKey = `-----BEGIN RSA PRIVATE KEY-----
 MIIEogIBAAKCAQEAgmbhCozHDMmLZuEbZ4fu3zDSingivUZK/ho9aEgP9iLUlM7V
 Rzmk3BjcqGKiBlgGfSMug8osbS8mwOEUZhTjj1XEg1dw/u5g/U6w60J7czT/Uv0z
@@ -41,10 +26,32 @@ Cy6l0TFrObuajVCR4dzwHe6ed93MoVNmhoSUxNOY4Eb7vzxwVZEONMn25TYgWKJ2
 +X+ELYgPF77It45CbX7W7434GKp/2+zXoHcqXP09zi+u0sA8iW4=
 -----END RSA PRIVATE KEY-----`
 
+exports.list = {
+  page: 1,
+  total: 12,
+  data: [
+    {
+      id: "kp01",
+      key_pair_finger_print: "a562406dd52532a45bf469fd45117500",
+      public_key_body:
+        "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQChYaZjH0O5O9dYO/uvHqo1zf8v39zYPBWxdNBLKCMWA08lyeVA/ZzYrAOCcQ6DjsReM5R4x7+sRgs8t8PFwbEPhWTKw0JFqpngZU2ipxg65rAc7zqssqysVSrz9ex1Io0pWP6O20k7j4mrsUtpS3UAAqKPt0V6kdpBY0d+0yy4t1vRfswZJc5uoaVmORqczQCriQKoIBIVH1fh1HAzFtsvTttXNAsWUjOW1Ptq9il0nefOFOU95wLbf8tmxhLkdXeyDOe8bmPqzjLlrMKoDcQEy4usqS+FWD8zsO1UAo9ntGGBfQm+iLCx56Z4HEqIwH0tdc2ZF4rUV0uLUplKDs35 imported-openssh",
+      key_pair_name: "keypair_1"
+    },
+    {
+      id: "kp02",
+      key_pair_finger_print: "2814fd6c0d43673de5f6ee74eff938d9",
+      public_key_body: privateKey,
+      key_pair_name: "keypair_2"
+    }
+  ],
+  size: 10
+}
+
 exports.create = {
   data: {
     key_pair_finger_print: "2814fd6c0d43673de5f6ee74eff938d9",
     key_pair_name: "keypair_3",
-    private_key_body: privateKey
+    private_key_body: privateKey,
+    public_key_body: privateKey
   }
 }
