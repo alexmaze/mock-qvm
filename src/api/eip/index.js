@@ -1,8 +1,7 @@
 const Router = require("koa-router")
-const utils = require("../../utils")
-
+const data = require("./data")
 const router = new Router()
-const data = require("./data.js")
+const utils = require("../../utils")
 
 router.get("/", async (ctx, next) => {
   await utils.sleep(0.5)
@@ -14,6 +13,17 @@ router.get("/:id", async (ctx, next) => {
   ctx.body = {
     data: data.list.data[0]
   }
+})
+
+router.post("/", ctx => {
+  console.log("hh", ctx.request.body)
+  ctx.body = data.create
+})
+
+router.post("/:id/associate", async ctx => {
+  await utils.sleep(0.5)
+  console.log("attach")
+  ctx.body = {}
 })
 
 module.exports = router
