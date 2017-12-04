@@ -96,10 +96,12 @@ exports.list = {
       tags: {
         tag: []
       },
+      region_id: "cn-qingdao",
       vpc_id: "vpc-m5ecnznw3rrecb8rdw5fg",
       instance_count: 1
     },
     {
+      region_id: "cn-qingdao",
       creation_time: "2017-09-30T03:38:20Z",
       description:
         "security group of ACS Cluster c354b63efa4ec475bace12b7df79f679c",
@@ -118,6 +120,7 @@ exports.list = {
       instance_count: 0
     },
     {
+      region_id: "cn-qingdao",
       creation_time: "2017-09-28T08:29:54Z",
       description:
         "security group of ACS Cluster c8c9397d0268649b89646611a47ffa3e3",
@@ -131,6 +134,7 @@ exports.list = {
       instance_count: 0
     },
     {
+      region_id: "cn-qingdao",
       creation_time: "2017-06-07T11:41:09Z",
       description:
         "security group of ACS Cluster c75fc3bc76d0f48cdaabc5a1b216984f8",

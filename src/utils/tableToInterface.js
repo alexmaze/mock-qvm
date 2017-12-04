@@ -1,15 +1,23 @@
 const fs = require("fs")
 const path = require("path")
-const data = `DestGroupId	String	否	同一Region内的目标安全组Id，DestGroupId或者DestCidrIp参数必须设置一项，如果两项都设置，则默认对DestCidrIp授权。如果指定了该字段且没有指定DestCidrIp，则NicType只能选择intranet
-DestGroupOwnerAccount	String	否	跨用户安全组授权时，目标安全组所属用户阿里云账号。该参数可选，如果该参数及DestGroupOwnerId均未设置，则默认为同一账户安全组间授权。DestCidrIp如果已经被设置，则该参数无效。
-DestGroupOwnerId	String	否	跨用户安全组授权时，目标安全组所属用户阿里云账号ID。该参数可选，如果该参数及DestGroupOwnerAccount均未设置，则默认为同一账户安全组间授权。DestCidrIp如果已经被设置，则该参数无效。
-DestCidrIp	String	否	目标IP地址范围，必须采用CIDR格式来指定IP地址范围，默认值为0.0.0.0/0（表示不受限制），其他支持的格式如10.159.6.18/12。仅支持IPV4。
-SourceCidrIp	String	否	源IP地址范围，可选参数，不填表示SecurityGroupId下的所有ip都适用，否则则只有指定的ip适用。必须采用CIDR格式（如10.159.6.18/12）来指定IP地址范围。仅支持IPV4。
-SourcePortRange	String	否	源IP协议相关的端口号范围，可选参数，不填则不限制端口。
-Policy	String	否	授权策略，参数值可为：accept（接受访问）, drop (拒绝访问) 
-Priority	String	否	授权策略优先级，参数值可为：1-100 
-NicType	String	否	网络类型，取值：
-Description	String	否	安全组规则的描述信息。不超过512个字符。`
+const data = `ImageId	String	镜像编码
+ImageVersion	String	镜像版本
+OSType	String	操作系统类型，可选值有：windows linux
+Platform	String	操作系统平台
+Architecture	String	镜像系统类型：i386 | x86_64
+ImageName	String	镜像的名称
+Description	String	描述信息
+Size	Integer	镜像大小
+ImageOwnerAlias	String	镜像所有者别名 有效值： system – 系统公共镜像 self – 用户的自定义镜像 others – 其他用户的公开镜像 marketplace -镜像市场镜像
+OSName	String	操作系统的显示名称
+DiskDeviceMappings	DiskDeviceMapping	镜像下包含磁盘和快照的系统描述
+ProductCode	String	镜像市场的镜像商品标示
+IsSubscribed	String	用户是否订阅了该镜像的ProductCode对应的镜像商品的服务条款. true：表示已经订阅 false：表示未订阅
+Progress	String	镜像完成的进度，单位为百分比
+Status	String	镜像的状态，可能的值有： UnAvailable 不可用 Available 可用 Creating 创建中 CreateFailed 创建失败
+CreationTime	String	创建时间。按照ISO8601标准表示，并需要使用UTC时间。格式为：YYYY-MM-DDThh:mmZ
+Usage	String	有引用关系的资源类型，instance | none
+IsCopied	String	是否是拷贝的镜像，true | false`
 
 const result = render(data)
 
@@ -26,8 +34,10 @@ function render(obj) {
   ret.push("export interface IInterface {")
   for (let i = 0; i < arr.length; i++) {
     const item = arr[i]
-    ret.push(`  // ${item[3]}`)
-    ret.push(`  ${item[0]}${item[2] === "否" ? "?:" : ":"} ${item[1]}`)
+    // ret.push(`  // ${item[3]}`)
+    // ret.push(`  ${item[0]}${item[2] === "否" ? "?:" : ":"} ${item[1]}`)
+    ret.push(`  // ${item[2]}`)
+    ret.push(`  ${item[0]}: ${item[1]}`)
   }
 
   ret.push("}")
