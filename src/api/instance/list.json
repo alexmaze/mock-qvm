@@ -1,6 +1,8 @@
 {
   "data": [
     {
+      "cpu": 2,
+      "memory": 2048,
       "creation_time": "2015-07-27T07:08Z",
       "device_available": true,
       "eip_address": {},
@@ -18,7 +20,6 @@
       "internet_charge_type": "PayByTraffic",
       "internet_max_bandwidth_in": -1,
       "internet_max_bandwidth_out": 1,
-      "io_optimized": false,
       "operation_locks": {
         "lock_reason": []
       },
@@ -34,10 +35,13 @@
           "ip_address": []
         }
       },
+      "io_optimized": true,
       "key_pair_name": "keypair_1",
       "zone_id": "cn-shenzhen-a"
     },
     {
+      "cpu": 1,
+      "memory": 512,
       "creation_time": "2015-07-27T07:08Z",
       "device_available": true,
       "eip_address": {},

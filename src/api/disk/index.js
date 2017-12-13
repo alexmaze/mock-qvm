@@ -7,6 +7,7 @@ const data = require("./data.js")
 router.get("/", async (ctx, next) => {
   await utils.sleep(0.5)
   ctx.body = data.list
+  // ctx.status = 500
 })
 
 router.get("/:id", async (ctx, next) => {
