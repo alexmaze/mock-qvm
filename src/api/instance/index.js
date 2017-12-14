@@ -3,10 +3,11 @@ const utils = require("../../utils")
 
 const router = new Router()
 
+const data = require("./data")
+
 router.get("/", async (ctx, next) => {
   await utils.sleep(0.5)
-  let data = require("./list.json")
-  ctx.body = data
+  ctx.body = data.list
 })
 
 module.exports = router

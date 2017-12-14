@@ -447,3 +447,177 @@ exports.zoneList = {
     }
   ]
 }
+exports.newRegions = {
+  data: [
+    {
+      region_id: "cn-qingdao",
+      local_name: "华北 1 (青岛)",
+      zones: [
+        {
+          zone_id: "cn-qingdao-b",
+          local_name: "华北 1 可用区 B"
+        },
+        {
+          zone_id: "cn-qingdao-c",
+          local_name: "华北 1 可用区 C"
+        }
+      ],
+      resource: {
+        instance_families: [
+          {
+            instance_type_family_id: "ecs.t5",
+            generation: "ecs-4"
+          },
+          {
+            instance_type_family_id: "ecs.g5",
+            generation: "ecs-4"
+          }
+        ]
+      }
+    },
+    {
+      region_id: "cn-beijing",
+      local_name: "华北 2 (北京)",
+      zones: [
+        {
+          zone_id: "cn-beijing-a",
+          local_name: "华北 2 可用区 A"
+        },
+        {
+          zone_id: "cn-beijing-b",
+          local_name: "华北 2 可用区 B"
+        },
+        {
+          zone_id: "cn-beijing-c",
+          local_name: "华北 2 可用区 C"
+        },
+        {
+          zone_id: "cn-beijing-d",
+          local_name: "华北 2 可用区 D"
+        },
+        {
+          zone_id: "cn-beijing-e",
+          local_name: "华北 2 可用区 E"
+        }
+      ],
+      resource: {
+        instance_families: [
+          {
+            instance_type_family_id: "ecs.t5",
+            generation: "ecs-4"
+          },
+          {
+            instance_type_family_id: "ecs.g5",
+            generation: "ecs-4"
+          }
+        ]
+      }
+    },
+    {
+      region_id: "cn-hangzhou",
+      local_name: "华东 1 (杭州)",
+      zones: [
+        {
+          zone_id: "cn-hangzhou-b",
+          local_name: "华东 1 可用区 B"
+        },
+        {
+          zone_id: "cn-hangzhou-e",
+          local_name: "华东 1 可用区 E"
+        },
+        {
+          zone_id: "cn-hangzhou-f",
+          local_name: "华东 1 可用区 F"
+        }
+      ],
+      resource: {
+        instance_families: [
+          {
+            instance_type_family_id: "ecs.t5",
+            generation: "ecs-4"
+          },
+          {
+            instance_type_family_id: "ecs.sn2",
+            generation: "ecs-2"
+          },
+          {
+            instance_type_family_id: "ecs.sn2ne",
+            generation: "ecs-3"
+          }
+        ]
+      }
+    },
+    {
+      region_id: "cn-shanghai",
+      local_name: "华东 2 (上海)",
+      zones: [
+        {
+          zone_id: "cn-shanghai-a",
+          local_name: "华东 2 可用区 A"
+        },
+        {
+          zone_id: "cn-shanghai-b",
+          local_name: "华东 2 可用区 B"
+        },
+        {
+          zone_id: "cn-shanghai-c",
+          local_name: "华东 2 可用区 C"
+        },
+        {
+          zone_id: "cn-shanghai-d",
+          local_name: "华东 2 可用区 D"
+        }
+      ],
+      resource: {
+        instance_families: [
+          {
+            instance_type_family_id: "ecs.t5",
+            generation: "ecs-4"
+          },
+          {
+            instance_type_family_id: "ecs.sn2",
+            generation: "ecs-2"
+          },
+          {
+            instance_type_family_id: "ecs.sn2ne",
+            generation: "ecs-3"
+          }
+        ]
+      }
+    },
+    {
+      region_id: "cn-shenzhen",
+      local_name: "华南 1 (深圳)",
+      zones: [
+        {
+          zone_id: "cn-shenzhen-a",
+          local_name: "华南 1 可用区 A"
+        },
+        {
+          zone_id: "cn-shenzhen-b",
+          local_name: "华南 1 可用区 B"
+        },
+        {
+          zone_id: "cn-shenzhen-c",
+          local_name: "华南 1 可用区 C"
+        }
+      ],
+      resource: {
+        instance_families: [
+          {
+            instance_type_family_id: "ecs.t5",
+            generation: "ecs-4"
+          },
+          {
+            instance_type_family_id: "ecs.sn2",
+            generation: "ecs-2"
+          },
+          {
+            instance_type_family_id: "ecs.sn2ne",
+            generation: "ecs-3"
+          }
+        ]
+      }
+    }
+  ]
+}

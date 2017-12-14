@@ -6,20 +6,13 @@ const data = require("./data")
 const router = new Router()
 
 router.get("/", async ctx => {
-  // let res
-  // try {
-  //   res = await client.request("DescribeRegions", {})
-  // } catch (e) {
-  //   res = e
-  // }
-  // ctx.body = res
   await utils.sleep(0.5)
-  ctx.body = data.list
+  ctx.body = data.newRegions
 })
 
-router.get("/:id/zone", async ctx => {
-  await utils.sleep(0.5)
-  ctx.body = data.zoneList
-})
+// router.get("/:id/zone", async ctx => {
+//   await utils.sleep(0.5)
+//   ctx.body = data.zoneList
+// })
 
 module.exports = router
