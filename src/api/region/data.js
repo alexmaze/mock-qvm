@@ -454,10 +454,16 @@ exports.newRegions = {
       local_name: "华北 1 (青岛)",
       zones: [
         {
+          available_disk_categories: {
+            disk_categories: ["cloud_ssd", "cloud_efficiency"]
+          },
           zone_id: "cn-qingdao-b",
           local_name: "华北 1 可用区 B"
         },
         {
+          available_disk_categories: {
+            disk_categories: ["cloud_ssd", "cloud_efficiency"]
+          },
           zone_id: "cn-qingdao-c",
           local_name: "华北 1 可用区 C"
         }
@@ -480,22 +486,37 @@ exports.newRegions = {
       local_name: "华北 2 (北京)",
       zones: [
         {
+          available_disk_categories: {
+            disk_categories: ["cloud_ssd", "cloud_efficiency"]
+          },
           zone_id: "cn-beijing-a",
           local_name: "华北 2 可用区 A"
         },
         {
+          available_disk_categories: {
+            disk_categories: ["cloud_ssd", "cloud_efficiency"]
+          },
           zone_id: "cn-beijing-b",
           local_name: "华北 2 可用区 B"
         },
         {
+          available_disk_categories: {
+            disk_categories: ["cloud_ssd", "cloud_efficiency"]
+          },
           zone_id: "cn-beijing-c",
           local_name: "华北 2 可用区 C"
         },
         {
+          available_disk_categories: {
+            disk_categories: ["cloud_ssd", "cloud_efficiency"]
+          },
           zone_id: "cn-beijing-d",
           local_name: "华北 2 可用区 D"
         },
         {
+          available_disk_categories: {
+            disk_categories: ["cloud_ssd", "cloud_efficiency"]
+          },
           zone_id: "cn-beijing-e",
           local_name: "华北 2 可用区 E"
         }
@@ -518,14 +539,23 @@ exports.newRegions = {
       local_name: "华东 1 (杭州)",
       zones: [
         {
+          available_disk_categories: {
+            disk_categories: ["cloud_ssd", "cloud_efficiency"]
+          },
           zone_id: "cn-hangzhou-b",
           local_name: "华东 1 可用区 B"
         },
         {
+          available_disk_categories: {
+            disk_categories: ["cloud_ssd", "cloud_efficiency"]
+          },
           zone_id: "cn-hangzhou-e",
           local_name: "华东 1 可用区 E"
         },
         {
+          available_disk_categories: {
+            disk_categories: ["cloud_ssd", "cloud_efficiency"]
+          },
           zone_id: "cn-hangzhou-f",
           local_name: "华东 1 可用区 F"
         }
@@ -552,18 +582,30 @@ exports.newRegions = {
       local_name: "华东 2 (上海)",
       zones: [
         {
+          available_disk_categories: {
+            disk_categories: ["cloud_ssd", "cloud_efficiency"]
+          },
           zone_id: "cn-shanghai-a",
           local_name: "华东 2 可用区 A"
         },
         {
+          available_disk_categories: {
+            disk_categories: ["cloud_ssd", "cloud_efficiency"]
+          },
           zone_id: "cn-shanghai-b",
           local_name: "华东 2 可用区 B"
         },
         {
+          available_disk_categories: {
+            disk_categories: ["cloud_ssd", "cloud_efficiency"]
+          },
           zone_id: "cn-shanghai-c",
           local_name: "华东 2 可用区 C"
         },
         {
+          available_disk_categories: {
+            disk_categories: ["cloud_ssd", "cloud_efficiency"]
+          },
           zone_id: "cn-shanghai-d",
           local_name: "华东 2 可用区 D"
         }
@@ -590,14 +632,23 @@ exports.newRegions = {
       local_name: "华南 1 (深圳)",
       zones: [
         {
+          available_disk_categories: {
+            disk_categories: ["cloud_ssd", "cloud_efficiency"]
+          },
           zone_id: "cn-shenzhen-a",
           local_name: "华南 1 可用区 A"
         },
         {
+          available_disk_categories: {
+            disk_categories: ["cloud_ssd", "cloud_efficiency"]
+          },
           zone_id: "cn-shenzhen-b",
           local_name: "华南 1 可用区 B"
         },
         {
+          available_disk_categories: {
+            disk_categories: ["cloud_ssd", "cloud_efficiency"]
+          },
           zone_id: "cn-shenzhen-c",
           local_name: "华南 1 可用区 C"
         }

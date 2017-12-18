@@ -12,7 +12,8 @@ router.get("/instance/family", async (ctx, next) => {
 
 router.get("/instance/family/:id", async (ctx, next) => {
   await utils.sleep(0.5)
-  ctx.body = data.inst_type
+  console.log(ctx.params["id"])
+  ctx.body = { data: data.inst_type[ctx.params["id"]] }
 })
 
 module.exports = router
