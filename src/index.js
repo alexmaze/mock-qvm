@@ -21,7 +21,7 @@ app.use(async (ctx, next) => {
 
 // regist routes
 const files = fs.readdirSync(path.join(__dirname, "./api"))
-router.prefix("/api/qvm")
+router.prefix("/v1")
 files.forEach(file => {
   router.use(`/${file}`, require(`./api/${file}`).routes())
 })

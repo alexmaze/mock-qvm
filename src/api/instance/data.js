@@ -5,7 +5,10 @@ exports.list = {
       memory: 2048,
       creation_time: "2015-07-27T07:08Z",
       device_available: true,
-      eip_address: {},
+      eip_address: {
+        ip_address: "192.168.1.1",
+        bandwidth: 40
+      },
       expired_time: "2011-09-08T16:00Z",
       host_name: "iZ94t3s0jxkZ",
       image_id: "centos6u5_64_20G_aliaegis_20150130.vhd",

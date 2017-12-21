@@ -10,4 +10,11 @@ router.get("/", async (ctx, next) => {
   ctx.body = data.list
 })
 
+router.get("/:id", async (ctx, next) => {
+  await utils.sleep(0.5)
+  ctx.body = {
+    data: data.list.data[0]
+  }
+})
+
 module.exports = router
